@@ -1,0 +1,6 @@
+target/*
+ivyrepo/*
+sbtboot/*
+project/target/*
+project/project/target/*
+
