@@ -1,9 +1,10 @@
 package org.functionalkoans.forscala
 
-import org.scalatest.matchers.ShouldMatchers
+
+import org.scalatest.Matchers
 import support.KoanSuite
 
-class AboutFormatting extends KoanSuite with ShouldMatchers {
+class AboutFormatting extends KoanSuite with Matchers {
 
   koan("String can be placed in format") {
     val s = "Hello World"

@@ -1,10 +1,11 @@
 package org.functionalkoans.forscala
 
+import org.scalatest.Matchers
 import support.KoanSuite
-import org.scalatest.matchers.ShouldMatchers
 
 
-class AboutEnumerations extends KoanSuite with ShouldMatchers {
+
+class AboutEnumerations extends KoanSuite with Matchers {
 
 // To create an enumeration, create an object that extends the abstract class Enumeration,
 // and set a val variable to the method Value.  This is a trick to give values to each val."
@@ -68,7 +69,7 @@ class AboutEnumerations extends KoanSuite with ShouldMatchers {
     Planets.Mercury.id should be(__)
     Planets.Venus.id should be(__)
 
-    Planets.Mercury.toString should be("__") 
+    Planets.Mercury.toString should be("__")
     Planets.Venus.toString should be("__")
 
     (Planets.Earth == Planets.Earth) should be(__)

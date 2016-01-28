@@ -1,13 +1,15 @@
 package org.functionalkoans.forscala.support
 
-import org.scalatest.events.Event
 import org.scalatest.Stopper
-import language.reflectiveCalls
+
+import scala.language.reflectiveCalls
 
 object Master extends Stopper {
   var studentNeedsToMeditate = false
 
   override def apply() = studentNeedsToMeditate
+
+  override def stopRequested() = studentNeedsToMeditate
 
   type HasTestNameAndSuiteName = {
     val suiteName: String
@@ -24,5 +26,6 @@ object Master extends Stopper {
     "Please meditate on koan \"%s\" of suite \"%s\"" format (event.testName, event.suiteName)
   }
 
+  def requestStop(): Unit = { studentNeedsToMeditate = true }
 }
 

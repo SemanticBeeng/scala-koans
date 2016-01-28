@@ -1,11 +1,11 @@
 package org.functionalkoans.forscala.support
 
 import org.scalatest.exceptions.TestPendingException
-import org.scalatest.{Tracker, Stopper, Reporter, FunSuite}
-import org.scalatest.matchers.{Matcher, ShouldMatchers}
+import org.scalatest._
 import org.scalatest.events.{TestPending, TestFailed, TestIgnored, Event}
+import org.scalatest.matchers.Matcher
 
-trait KoanSuite extends FunSuite with ShouldMatchers {
+trait KoanSuite extends FunSuite with Matchers {
 
   def koan(name : String)(fun: => Unit) { test(name.stripMargin('|'))(fun) }
 
@@ -23,17 +23,17 @@ trait KoanSuite extends FunSuite with ShouldMatchers {
     var failed = false
     def failure(event: Master.HasTestNameAndSuiteName) {
       failed = true
-      info("*****************************************")
-      info("*****************************************")
-      info("")
-      info("")
-      info("")
-      info(Master.studentFailed(event))
-      info("")
-      info("")
-      info("")
-      info("*****************************************")
-      info("*****************************************")
+      /*info*/println("*****************************************")
+      /*info*/println("*****************************************")
+      /*info*/println("")
+      /*info*/println("")
+      /*info*/println("")
+      /*info*/println(Master.studentFailed(event))
+      /*info*/println("")
+      /*info*/println("")
+      /*info*/println("")
+      /*info*/println("*****************************************")
+      /*info*/println("*****************************************")
     }
 
     def apply(event: Event) {
@@ -47,9 +47,12 @@ trait KoanSuite extends FunSuite with ShouldMatchers {
     }
   }
 
-  protected override def runTest(testName: String, reporter: Reporter, stopper: Stopper, configMap: Map[String, Any], tracker: Tracker) {
+  override protected def runTest(testName: String, args: Args): Status = {
+
     if (!Master.studentNeedsToMeditate) {
-      super.runTest(testName, new ReportToTheMaster(reporter), Master, configMap, tracker)
+      super.runTest(testName, args.copy(stopper = Master, reporter = new ReportToTheMaster(args.reporter)))
+    } else {
+      FailedStatus
     }
   }
 

@@ -1,9 +1,10 @@
 package org.functionalkoans.forscala
 
+import org.scalatest.Matchers
 import support.KoanSuite
-import org.scalatest.matchers.ShouldMatchers
 
-class AboutPartialFunctions extends KoanSuite with ShouldMatchers {
+
+class AboutPartialFunctions extends KoanSuite with Matchers {
 
   koan( """A partial function is a trait that when
           | implemented can be used as building blocks to determine

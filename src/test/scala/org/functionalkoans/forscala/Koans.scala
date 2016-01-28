@@ -1,10 +1,9 @@
 package org.functionalkoans.forscala
 
 import org.scalatest._
-import support.Master
 
 class Koans extends Suite {
-  override def nestedSuites = List(
+  override def nestedSuites = collection.immutable.IndexedSeq(
     new AboutAsserts,
     new AboutValAndVar,
     new AboutLiteralBooleans,
@@ -51,10 +50,4 @@ class Koans extends Suite {
     new AboutTypeVariance,
     new AboutEnumerations
   )
-
-  override def run(testName: Option[String], reporter: Reporter, stopper: Stopper, filter: Filter,
-                   configMap: Map[String, Any], distributor: Option[Distributor], tracker: Tracker) {
-    super.run(testName, reporter, Master, filter, configMap, distributor, tracker)
-  }
-
 }
