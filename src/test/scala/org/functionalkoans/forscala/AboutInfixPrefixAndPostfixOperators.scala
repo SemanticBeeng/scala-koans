@@ -26,7 +26,7 @@ class AboutInfixPrefixAndPostfixOperators extends KoanSuite with Matchers {
   koan("""Postfix operators work if an object
            |  has a method that takes no parameters.""") {
     val g: Int = 31
-    (g toHexString) should be(1f) //toHexString takes no params therefore can be called
+    (g toHexString) should be("1f") //toHexString takes no params therefore can be called
     //as a postfix operator. Hint: The answer is 1f
   }
 
@@ -34,7 +34,7 @@ class AboutInfixPrefixAndPostfixOperators extends KoanSuite with Matchers {
   koan("""Prefix operators work if an object
            |  has a method name that starts with unary_ .""") {
     val g: Int = 31
-    (-g) should be(__)
+    (-g) should be(-g)
   }
 
   koan("""Here we create our own prefix operator for our own class.
@@ -48,7 +48,7 @@ class AboutInfixPrefixAndPostfixOperators extends KoanSuite with Matchers {
     }
 
     val stereo = new Stereo
-    (+stereo) should be(__)
-    (-stereo) should be(__)
+    (+stereo) should be("on")
+    (-stereo) should be("off")
   }
 }
