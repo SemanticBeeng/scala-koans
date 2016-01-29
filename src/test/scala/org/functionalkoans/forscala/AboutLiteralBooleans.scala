@@ -1,9 +1,10 @@
 package org.functionalkoans.forscala
 
 
-import org.scalatest.Matchers
+import org.scalatest.{Ignore, Matchers}
 import support.KoanSuite
 
+@Ignore
 class AboutLiteralBooleans extends KoanSuite with Matchers {
 
   koan("""Boolean literals are either true or false, using the true or false keyword""") {

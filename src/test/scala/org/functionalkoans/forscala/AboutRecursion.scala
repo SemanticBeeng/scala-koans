@@ -1,8 +1,10 @@
 package org.functionalkoans.forscala
 
 import org.functionalkoans.forscala.support.KoanSuite
+import org.scalatest.Ignore
 import scala.annotation.tailrec
 
+@Ignore
 class AboutRecursion extends KoanSuite {
 
   koan(

@@ -1,9 +1,10 @@
 package org.functionalkoans.forscala
 
 
-import org.scalatest.Matchers
+import org.scalatest.{Ignore, Matchers}
 import support.KoanSuite
 
+@Ignore
 class AboutLiteralStrings extends KoanSuite with Matchers {
 
   koan("Character Literals are quoted with single quotes") {

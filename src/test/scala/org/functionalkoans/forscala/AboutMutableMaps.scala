@@ -1,8 +1,10 @@
 package org.functionalkoans.forscala
 
+import org.scalatest.Ignore
 import support.KoanSuite
 import scala.collection.mutable
 
+@Ignore
 class AboutMutableMaps extends KoanSuite {
 
   koan("Mutable maps can be created easily") {

@@ -1,9 +1,9 @@
 package org.functionalkoans.forscala
 
 import org.functionalkoans.forscala.support.KoanSuite
-import org.scalatest.Matchers
+import org.scalatest.{Ignore, Matchers}
 
-
+@Ignore
 class AboutStringInterpolation extends KoanSuite with Matchers {
 
   koan(

@@ -1,9 +1,10 @@
 package org.functionalkoans.forscala
 
-import org.scalatest.Matchers
+import org.scalatest.{Ignore, Matchers}
 import support.KoanSuite
 
 // meditate on AboutAsserts to see how the Scala Koans work
+@Ignore
 class AboutAsserts extends KoanSuite with Matchers {
 
   koan("asserts can take a boolean argument") {

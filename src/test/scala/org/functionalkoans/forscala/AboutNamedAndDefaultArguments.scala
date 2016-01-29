@@ -1,7 +1,9 @@
 package org.functionalkoans.forscala
 
+import org.scalatest.Ignore
 import support.KoanSuite
 
+@Ignore
 class AboutNamedAndDefaultArguments() extends KoanSuite {
 
   class WithoutClassParameters() {

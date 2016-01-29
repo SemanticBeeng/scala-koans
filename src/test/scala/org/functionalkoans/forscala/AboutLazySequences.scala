@@ -1,7 +1,9 @@
 package org.functionalkoans.forscala
 
+import org.scalatest.Ignore
 import support.KoanSuite
 
+@Ignore
 class AboutLazySequences extends KoanSuite {
 
   koan("Creating a lazy collection form a strict collection") {

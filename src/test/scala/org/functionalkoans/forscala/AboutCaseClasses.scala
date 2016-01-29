@@ -1,7 +1,9 @@
 package org.functionalkoans.forscala
 
+import org.scalatest.Ignore
 import support.KoanSuite
 
+@Ignore
 class AboutCaseClasses extends KoanSuite {
 
   // case classes are very convenient, they give you a lot for free. The following Koans will

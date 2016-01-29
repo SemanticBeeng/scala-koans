@@ -1,7 +1,9 @@
 package org.functionalkoans.forscala
 
+import org.scalatest.Ignore
 import support.KoanSuite
 
+@Ignore
 class AboutClasses extends KoanSuite {
 
   // you can define class with var or val parameters

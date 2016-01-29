@@ -1,10 +1,10 @@
 package org.functionalkoans.forscala
 
-import org.scalatest.Matchers
+import org.scalatest.{Ignore, Matchers}
 import support.KoanSuite
 
 
-
+@Ignore
 class AboutEnumerations extends KoanSuite with Matchers {
 
 // To create an enumeration, create an object that extends the abstract class Enumeration,

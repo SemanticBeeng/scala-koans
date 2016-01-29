@@ -1,7 +1,9 @@
 package org.functionalkoans.forscala
 
 import org.functionalkoans.forscala.support.KoanSuite
+import org.scalatest.Ignore
 
+@Ignore
 class AboutAdvancedOptions extends KoanSuite {
   koan("Option is more than just a replacement of null, its also a collection") {
     Some(10) map { _ + 10} should be(__)

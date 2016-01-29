@@ -1,6 +1,7 @@
 package org.functionalkoans.forscala
 
 import org.functionalkoans.forscala.support.KoanSuite
+import org.scalatest.Ignore
 
 /**
  * AboutByNameParameter
@@ -8,6 +9,7 @@ import org.functionalkoans.forscala.support.KoanSuite
  * Prerequisites: AboutEither, AboutHigherOrderFunctions, AboutExceptions,
  *                About Pattern Matching, AboutApply
  */
+@Ignore
 class AboutByNameParameter extends KoanSuite {
 
   koan(

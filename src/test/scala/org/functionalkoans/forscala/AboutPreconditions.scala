@@ -1,7 +1,9 @@
 package org.functionalkoans.forscala
 
+import org.scalatest.Ignore
 import support.KoanSuite
 
+@Ignore
 class AboutPreconditions extends KoanSuite {
 
   class WithParameterRequirement(val myValue: Int) {
@@ -26,4 +28,4 @@ class AboutPreconditions extends KoanSuite {
 
 
 
-	
+

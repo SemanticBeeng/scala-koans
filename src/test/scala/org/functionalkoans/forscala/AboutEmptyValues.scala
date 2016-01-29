@@ -1,8 +1,9 @@
 package org.functionalkoans.forscala
 
+import org.scalatest.Ignore
 import support.KoanSuite
 
-
+@Ignore
 class AboutEmptyValues extends KoanSuite {
 
   koan("None equals None") {

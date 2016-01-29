@@ -1,9 +1,9 @@
 package org.functionalkoans.forscala
 
-import org.scalatest.Matchers
+import org.scalatest.{Ignore, Matchers}
 import support.KoanSuite
 
-
+@Ignore
 class AboutIterables extends KoanSuite with Matchers {
   koan( """Iterable is a trait that has the ability to return an iterator of itself.
           | Some known iterators are Sets, Lists, Vectors, Stacks, and Streams. Iterator has two

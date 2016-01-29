@@ -1,11 +1,12 @@
 package org.functionalkoans.forscala
 
 
-import org.scalatest.Matchers
+import org.scalatest.{Ignore, Matchers}
 import support.KoanSuite
 import language.postfixOps
 import Stream._
 
+@Ignore
 class AboutTraversables extends KoanSuite with Matchers {
 
 

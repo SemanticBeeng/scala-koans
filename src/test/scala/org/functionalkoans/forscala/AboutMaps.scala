@@ -1,7 +1,9 @@
 package org.functionalkoans.forscala
 
+import org.scalatest.Ignore
 import support.KoanSuite
 
+@Ignore
 class AboutMaps extends KoanSuite {
 
   koan("Maps can be created easily") {
@@ -84,7 +86,7 @@ class AboutMaps extends KoanSuite {
 
     val myMap = Map("OH" -> "Ohio", "WI" -> "Wisconsin", "IA" -> "Iowa")
 
-    // Cheat Code (because this is hard to illustrate): uncomment the intercept code to make this pass 
+    // Cheat Code (because this is hard to illustrate): uncomment the intercept code to make this pass
     //intercept[NoSuchElementException] {
 
       myMap("MI") should be(__)
