@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87f9763a-ebdd-4ab8-b626-cb391ef2424b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutParentClasses.scala" afterPath="$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutParentClasses.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/Koans.scala" afterPath="$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/Koans.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTraits.scala" afterPath="$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTraits.scala" />
     </list>
     <ignored path="Scala Koans.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,11 +62,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Koans.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Koans.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/Koans.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.03941909">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AboutTraits.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTraits.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.20164609">
+              <caret line="303" column="87" selection-start-line="303" selection-start-column="87" selection-end-line="303" selection-end-column="87" />
               <folding />
             </state>
           </provider>
@@ -121,6 +130,7 @@
         <option value="$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutValAndVar.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutParentClasses.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/Koans.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTraits.scala" />
       </list>
     </option>
   </component>
@@ -1164,44 +1174,44 @@
       <created>1454050478475</created>
       <option name="number" value="Default" />
       <updated>1454050478475</updated>
-      <workItem from="1454050527994" duration="9597000" />
+      <workItem from="1454050527994" duration="17350000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_koans - 2016.01.29 at 01h 04m 39s.xml">
+    <history-entry file="All_koans - 2016.01.29 at 02h 56m 56s.xml">
       <configuration name="All koans" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="All_koans - 2016.01.29 at 01h 09m 12s.xml">
+    <history-entry file="All_koans - 2016.01.29 at 03h 10m 30s.xml">
       <configuration name="All koans" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="All_koans - 2016.01.29 at 01h 11m 56s.xml">
+    <history-entry file="All_koans - 2016.01.29 at 03h 23m 07s.xml">
       <configuration name="All koans" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="All_koans - 2016.01.29 at 01h 19m 02s.xml">
+    <history-entry file="All_koans - 2016.01.29 at 03h 25m 40s.xml">
       <configuration name="All koans" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="All_koans - 2016.01.29 at 01h 20m 49s.xml">
+    <history-entry file="All_koans - 2016.01.29 at 03h 37m 26s.xml">
       <configuration name="All koans" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="All_koans - 2016.01.29 at 01h 24m 46s.xml">
+    <history-entry file="All_koans - 2016.01.29 at 03h 39m 53s.xml">
       <configuration name="All koans" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="All_koans - 2016.01.29 at 01h 26m 46s.xml">
+    <history-entry file="All_koans - 2016.01.29 at 03h 40m 15s.xml">
       <configuration name="All koans" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="All_koans - 2016.01.29 at 01h 33m 26s.xml">
+    <history-entry file="All_koans - 2016.01.29 at 03h 44m 12s.xml">
       <configuration name="All koans" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="All_koans - 2016.01.29 at 01h 35m 24s.xml">
+    <history-entry file="All_koans - 2016.01.29 at 03h 47m 25s.xml">
       <configuration name="All koans" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="All_koans - 2016.01.29 at 01h 37m 32s.xml">
+    <history-entry file="All_koans - 2016.01.29 at 03h 49m 09s.xml">
       <configuration name="All koans" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9597000" />
+    <option name="totallyTimeSpent" value="17350000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="257" y="3" width="1649" height="898" extended-state="0" />
@@ -1210,13 +1220,13 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28067884" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="GhcMod" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -1289,7 +1299,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
           <folding>
-            <element signature="e#38#91#0" expanded="true" />
+            <element signature="e#38#91#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1299,7 +1309,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding>
-            <element signature="e#38#65#0" expanded="true" />
+            <element signature="e#38#65#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1309,7 +1319,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding>
-            <element signature="e#38#65#0" expanded="true" />
+            <element signature="e#38#65#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1327,7 +1337,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding>
-            <element signature="e#38#65#0" expanded="true" />
+            <element signature="e#38#65#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1385,7 +1395,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding>
-            <element signature="e#38#65#0" expanded="true" />
+            <element signature="e#38#65#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1395,7 +1405,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding>
-            <element signature="e#38#65#0" expanded="true" />
+            <element signature="e#38#65#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1445,7 +1455,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
           <folding>
-            <element signature="e#38#65#0" expanded="true" />
+            <element signature="e#38#65#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1455,7 +1465,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
           <folding>
-            <element signature="e#38#65#0" expanded="true" />
+            <element signature="e#38#65#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1465,7 +1475,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding>
-            <element signature="e#38#65#0" expanded="true" />
+            <element signature="e#38#65#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1562,14 +1572,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTraits.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTraversables.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1619,7 +1621,7 @@
         <state vertical-scroll-proportion="0.15767635">
           <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding>
-            <element signature="e#38#65#0" expanded="true" />
+            <element signature="e#38#65#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1650,8 +1652,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/Koans.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03941909">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTraits.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.20164609">
+          <caret line="303" column="87" selection-start-line="303" selection-start-column="87" selection-end-line="303" selection-end-column="87" />
           <folding />
         </state>
       </provider>
