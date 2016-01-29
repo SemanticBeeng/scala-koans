@@ -1,7 +1,9 @@
 package org.functionalkoans.forscala
 
+import org.scalatest.Ignore
 import support.KoanSuite
 
+@Ignore
 class AboutOptions extends KoanSuite {
 
   koan("Option can have one of two values - Some or None") {
@@ -14,7 +16,7 @@ class AboutOptions extends KoanSuite {
 
   def maybeItWillReturnSomething(flag: Boolean): Option[String] = {
     if (flag) Some("Found value") else None
-  }  
+  }
 
   koan("Represent null with None because null is a bad idea") {
     val value1 = maybeItWillReturnSomething(true)
