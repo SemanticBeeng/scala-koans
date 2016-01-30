@@ -287,9 +287,9 @@ class AboutTypeVariance extends KoanSuite with Matchers {
     val citrusBasket: MyContainer[Citrus] = new MyContainer[Citrus](new Orange)
 
     citrusBasket.set(new Orange)
-    citrusBasket.contents should be(__)
+    citrusBasket.contents should be("Citrus")
 
     citrusBasket.set(new Tangelo)
-    citrusBasket.contents should be(__)
+    citrusBasket.contents should be("Citrus")
   }
 }
