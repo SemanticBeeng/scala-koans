@@ -34,6 +34,13 @@ class AboutTypeVariance extends KoanSuite with Matchers {
 
     val fruitBasket = new MyContainer(new Orange())
     fruitBasket.contents should be("Orange")
+
+    /**
+      * @doesnotcompile fruitBasket is of type Orange
+      *                 <code>
+        fruitBasket.set(new Fruit())
+      *                 </code>
+      **/
   }
 
 
@@ -53,6 +60,9 @@ class AboutTypeVariance extends KoanSuite with Matchers {
 
     val fruitBasket = new MyContainer[Fruit](new Orange())
     fruitBasket.contents should be("Fruit")
+
+    // fruitBasket is really of type Fruit
+    fruitBasket.set(new Fruit())
   }
 
   koan("You can coerece your object to a type.") {
@@ -71,6 +81,9 @@ class AboutTypeVariance extends KoanSuite with Matchers {
 
     val fruitBasket: MyContainer[Fruit] = new MyContainer(new Orange())
     fruitBasket.contents should be("Fruit")
+
+    // fruitBasket is really of type Fruit
+    fruitBasket.set(new Fruit())
   }
 
   koan("for invariant containers variable type must match assigned type ") {
@@ -91,7 +104,7 @@ class AboutTypeVariance extends KoanSuite with Matchers {
       * @doesnotcompile Cannot assign invariant containers of polymorphic types.
       * @see https://twitter.github.io/scala_school/type-basics.html#variance
       *      <code>
-      *      val fruitBasket:MyContainer[Fruit] = new MyContainer[Orange](new Orange())
+        val fruitBasket:MyContainer[Fruit] = new MyContainer[Orange](new Orange())
       *      </code>
       **/
   }
@@ -110,7 +123,7 @@ class AboutTypeVariance extends KoanSuite with Matchers {
     }
 
     val fruitBasket: MyContainer[Fruit] = new MyContainer[Orange](new Orange())
-    fruitBasket.contents should be(__)
+    fruitBasket.contents should be("Orange")
   }
 
   /**
@@ -121,9 +134,17 @@ class AboutTypeVariance extends KoanSuite with Matchers {
   koan("mutating an object is not allowed with covariance") {
 
     class MyContainer[+A](a: A)(implicit manifest: scala.reflect.Manifest[A]) {
-      private[this] val item = a
+      private[this] var item = a
 
       def get = item
+
+      /** @doesnotcompile
+       *  <code>
+        def set(a: A) {
+           item = a
+         }
+        * </code>
+        * */
 
       def contents = manifest.runtimeClass.getSimpleName
     }
@@ -135,9 +156,11 @@ class AboutTypeVariance extends KoanSuite with Matchers {
 
     /**
       * @doesnotcompile
-      *
-      * val navelOrangeBasket: MyContainer[NavelOrange] = new MyContainer[Orange](new Orange())
-      * val tangeloBasket: MyContainer[Tangelo] = new MyContainer[Orange](new Orange())
+      * <code>
+
+        val navelOrangeBasket: MyContainer[NavelOrange] = new MyContainer[Orange](new Orange())
+        val tangeloBasket: MyContainer[Tangelo] = new MyContainer[Orange](new Orange())
+      * </code>
       **/
   }
 
@@ -160,17 +183,18 @@ class AboutTypeVariance extends KoanSuite with Matchers {
     }
 
     val citrusBasket: MyContainer[Citrus] = new MyContainer[Citrus](new Orange)
-    citrusBasket.contents should be("Orange")
+    citrusBasket.contents should be("Citrus") /** @keypoint */
 
     val orangeBasket: MyContainer[Orange] = new MyContainer[Citrus](new Tangelo)
-    orangeBasket.contents should be("Tangelo")
+    orangeBasket.contents should be("Citrus") /** @keypoint */
 
     val tangeloBasket: MyContainer[Tangelo] = new MyContainer[Citrus](new Orange)
-    tangeloBasket.contents should be("Orange")
+    tangeloBasket.contents should be("Citrus") /** @keypoint */
 
     val orangeBasketReally: MyContainer[Orange] = tangeloBasket.asInstanceOf[MyContainer[Orange]]
-    orangeBasketReally.contents should be("Orange")
+    orangeBasketReally.contents should be("Citrus") /** @keypoint */
     orangeBasketReally.set(new Orange())
+    orangeBasketReally.contents should be("Citrus") /** @keypoint */
   }
 
   // Declaring contravariance variance with - also means that the container cannot be accessed with a getter or
