@@ -3,6 +3,8 @@ package org.functionalkoans.forscala
 import org.functionalkoans.forscala.support.KoanSuite
 import org.scalatest.Matchers
 
+import scala.reflect
+
 /**
   * Source: http://twitter.github.io/scala_school/type-basics.html
   */
@@ -11,12 +13,11 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
 
   koan("""Without parametric polymorphism, a generic list data structure would always look like this""") {
 
-    import scala.reflect.runtime.universe._
-    def inspect[T](l: List[T])(implicit tt: TypeTag[T]) = tt.tpe
+    def manifestOf[T](l: List[T])(implicit tm: Manifest[T]) = tm
 
-    val list = 2 :: 1 :: "bar" :: "foo" :: Nil
+    manifestOf(2 :: 1 :: "bar" :: "foo" :: Nil) should be(Manifest.Any)
 
-    inspect(list).fullName should be("Any")
+    manifestOf(2 :: 1 :: 3 :: 4 :: Nil) should be(Manifest.Int)
   }
 
   koan("""Some type concepts you’d like to express in Scala that are “too generic” for the compiler to understand""") {
