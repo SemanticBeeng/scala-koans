@@ -125,6 +125,7 @@ class AboutTraits extends KoanSuite {
         def invent(item:String) = s"I have invented $item!"
     }
 
+    // @todo
     val einstein = new Scientist("Albert",  "Einstein") with Logging  //mixin traits during instantiation!
     einstein.discover("Relativity!")
     einstein.log("Although it is utmost of importance that this does not fall into the wrong hands")
@@ -231,6 +232,7 @@ class AboutTraits extends KoanSuite {
       }
     }
 
+    // @todo
     val myQueue = new BasicIntQueue with Incrementing with Doubling with Filtering //mixin during instantiation
     myQueue put 4
     myQueue put -1
