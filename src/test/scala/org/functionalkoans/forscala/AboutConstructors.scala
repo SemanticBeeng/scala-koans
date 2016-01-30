@@ -1,7 +1,9 @@
 package org.functionalkoans.forscala
 
+import org.scalatest.Ignore
 import support.KoanSuite
 
+@Ignore
 class AboutConstructors extends KoanSuite {
 
   class AboutConstructorWithAuxiliaryConstructor(val name: String) {
