@@ -6,7 +6,8 @@ import org.scalatest.Matchers
 import scala.reflect
 
 /**
-  * Source: http://twitter.github.io/scala_school/type-basics.html
+  * @see http://twitter.github.io/scala_school/type-basics.html
+  * @see http://docs.scala-lang.org/overviews/reflection/typetags-manifests.html
   */
 class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
 
@@ -43,15 +44,20 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
     */
   koan("""In scala all type inference is local. Scala considers one expression at a time""") {
 
-    def id[T](x: T) = x
-
-    val x = id(322)
-
-    x should be(322)
-
     // @see http://stackoverflow.com/a/19388888/4032515
     import scala.reflect.ClassTag
-    val tag: ClassManifest[Int] = ClassTag(x.getClass)
+
+    def id[T](x: T) = x
+
+    ClassTag(id(322).getClass) should be(ClassTag.Int)
+
+    val v2: Float = 12.3f
+    ClassTag(id(v2).getClass) should be(ClassTag.Float)
+
+    //@todo
+    // val v3 = Array(1,2,3,4)
+    // ClassTag(id(v3).getClass) should be(ClassTag[scala.Array])
+
   }
 
 

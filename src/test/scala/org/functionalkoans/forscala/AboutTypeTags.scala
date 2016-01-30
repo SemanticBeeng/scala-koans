@@ -5,9 +5,6 @@ import scala.reflect.runtime.universe._
 
 class Candy
 
-/**
-  * @see http://docs.scala-lang.org/overviews/reflection/typetags-manifests.html
-  */
 class AboutTypeTags extends KoanSuite {
 
   koan("""TypeTags can be used to determine a type used
