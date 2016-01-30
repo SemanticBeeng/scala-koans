@@ -37,9 +37,9 @@ class AboutTypeVariance extends KoanSuite with Matchers {
 
     /**
       * @doesnotcompile fruitBasket is of type Orange
-      *                 <code>
-        fruitBasket.set(new Fruit())
-      *                 </code>
+      * <code>
+          fruitBasket.set(new Fruit())
+      * </code>
       **/
   }
 
