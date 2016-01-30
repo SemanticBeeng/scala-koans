@@ -234,12 +234,12 @@ class AboutTypeVariance extends KoanSuite with Matchers {
     tangeloBasket.contents should be("Citrus")
   }
 
-  // Declaring neither -/+, indicates invariance variance.  You cannot use a superclass
-  // variable reference (\"contravariant\" position) or a subclass variable reference (\"covariant\" position)
-  // of that type.  In our example, this means that if you create a citrus basket you can only reference that
-  // that citrus basket with a citrus variable only.
-
   koan("invariance means you need to specify the type exactly") {
+
+    // Declaring neither -/+, indicates invariance variance.  You cannot use a superclass
+    // variable reference (\"contravariant\" position) or a subclass variable reference (\"covariant\" position)
+    // of that type.  In our example, this means that if you create a citrus basket you can only reference that
+    // that citrus basket with a citrus variable only.
 
     class MyContainer[A](a: A)(implicit manifest: scala.reflect.Manifest[A]) {
       private[this] var item = a
@@ -254,7 +254,19 @@ class AboutTypeVariance extends KoanSuite with Matchers {
     }
 
     val citrusBasket: MyContainer[Citrus] = new MyContainer[Citrus](new Orange)
-    citrusBasket.contents should be(__)
+    citrusBasket.contents should be("Citrus")
+
+    citrusBasket.set(new Orange)
+    val citrus = citrusBasket.get
+
+    citrus.isInstanceOf[Orange] should be (true)
+
+    /**
+      * @doesnotcompile
+      * <code>
+           val anotherCitrus:Orange = citrusBasket.get
+      * </code>
+      **/
   }
 
 
