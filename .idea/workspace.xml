@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33e51de5-7d4c-44b5-9b8d-06490ca3541f" name="Default" comment="" />
+    <list default="true" id="33e51de5-7d4c-44b5-9b8d-06490ca3541f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTypeVariance.scala" afterPath="$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTypeVariance.scala" />
+    </list>
     <ignored path="Scala Koans.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,8 +35,8 @@
       <file leaf-file-name="AboutTypeVariance.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTypeVariance.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.13900416">
-              <caret line="193" column="97" selection-start-line="193" selection-start-column="97" selection-end-line="193" selection-end-column="97" />
+            <state vertical-scroll-proportion="1.473029">
+              <caret line="246" column="21" selection-start-line="246" selection-start-column="21" selection-end-line="246" selection-end-column="21" />
               <folding>
                 <element signature="e#38#67#0" expanded="true" />
               </folding>
@@ -1013,14 +1015,11 @@
       <created>1454136152871</created>
       <option name="number" value="Default" />
       <updated>1454136152871</updated>
-      <workItem from="1454136165602" duration="6524000" />
+      <workItem from="1454136165602" duration="7196000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AboutTypeVariance - 2016.01.29 at 22h 50m 24s.xml">
-      <configuration name="AboutTypeVariance" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
     <history-entry file="AboutTypeVariance - 2016.01.29 at 22h 51m 02s.xml">
       <configuration name="AboutTypeVariance" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
@@ -1048,13 +1047,16 @@
     <history-entry file="AboutTypeVariance - 2016.01.30 at 00h 26m 27s.xml">
       <configuration name="AboutTypeVariance" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
+    <history-entry file="AboutTypeVariance - 2016.01.30 at 00h 42m 39s.xml">
+      <configuration name="AboutTypeVariance" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6524000" />
+    <option name="totallyTimeSpent" value="7196000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="257" y="3" width="1649" height="898" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1065,7 +1067,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="GhcMod" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -1107,19 +1109,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTypeVariance.scala</url>
-          <line>206</line>
+          <line>205</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTypeVariance.scala</url>
-          <line>231</line>
+          <line>243</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTypeVariance.scala</url>
-          <line>250</line>
+          <line>262</line>
           <properties />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
@@ -1173,8 +1175,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTypeVariance.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13900416">
-          <caret line="193" column="97" selection-start-line="193" selection-start-column="97" selection-end-line="193" selection-end-column="97" />
+        <state vertical-scroll-proportion="1.473029">
+          <caret line="246" column="21" selection-start-line="246" selection-start-column="21" selection-end-line="246" selection-end-column="21" />
           <folding>
             <element signature="e#38#67#0" expanded="true" />
           </folding>

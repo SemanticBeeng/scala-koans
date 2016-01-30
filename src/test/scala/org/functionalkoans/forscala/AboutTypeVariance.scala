@@ -192,20 +192,32 @@ class AboutTypeVariance extends KoanSuite with Matchers {
     tangeloBasket.contents should be("Citrus") /** @keypoint */
 
     val orangeBasketReally: MyContainer[Orange] = tangeloBasket.asInstanceOf[MyContainer[Orange]]
-    orangeBasketReally.contents should be("Citrus") /** @keypoint */
+    orangeBasketReally.contents should be("Citrus")
+
+    /** @keypoint */
     orangeBasketReally.set(new Orange())
-    orangeBasketReally.contents should be("Citrus") /** @keypoint */
+    orangeBasketReally.contents should be("Citrus")
+
+    /** @keypoint */
   }
 
-  // Declaring contravariance variance with - also means that the container cannot be accessed with a getter or
-  // or some other accessor, since that would cause type inconsistency.  In our example, you can put an orange
-  // or a tangelo into a citrus basket. Problem is, if you have a reference to an orange basket,
-  // and if you believe that you have an orange basket then you shouldn't expect to get a
-  // tangelo out of it.
   koan("A reference to a parent type means you cannot anticipate getting a more specific type") {
 
     class MyContainer[-A](a: A)(implicit manifest: scala.reflect.Manifest[A]) {
       private[this] var item = a
+
+      /**
+        * @doesnotcompile
+        * Declaring contravariance variance with - also means that the container cannot be accessed with a getter or
+        * or some other accessor, since that would cause type inconsistency.  In our example, you can put an orange
+        * or a tangelo into a citrus basket. Problem is, if you have a reference to an orange basket,
+        * and if you believe that you have an orange basket then you shouldn't expect to get a
+        * tangelo out of it.
+
+        * <code>
+          def get = item
+        * </code>
+        **/
 
       def set(a: A) {
         item = a
@@ -215,11 +227,11 @@ class AboutTypeVariance extends KoanSuite with Matchers {
     }
 
     val citrusBasket: MyContainer[Citrus] = new MyContainer[Citrus](new Orange)
-    citrusBasket.contents should be(__)
+    citrusBasket.contents should be("Citrus")
     val orangeBasket: MyContainer[Orange] = new MyContainer[Citrus](new Tangelo)
-    orangeBasket.contents should be(__)
+    orangeBasket.contents should be("Citrus")
     val tangeloBasket: MyContainer[Tangelo] = new MyContainer[Citrus](new Orange)
-    tangeloBasket.contents should be(__)
+    tangeloBasket.contents should be("Citrus")
   }
 
   // Declaring neither -/+, indicates invariance variance.  You cannot use a superclass
