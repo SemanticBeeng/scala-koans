@@ -12,7 +12,7 @@ import scala.reflect
 class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
 
 
-  koan("""Without parametric polymorphism, a generic list data structure would always look like this""") {
+  koan( """Without parametric polymorphism, a generic list data structure would always look like this""") {
 
     def manifestOf[T](l: List[T])(implicit tm: Manifest[T]) = tm
 
@@ -21,7 +21,10 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
     manifestOf(2 :: 1 :: 3 :: 4 :: Nil) should be(Manifest.Int)
   }
 
-  koan("""Some type concepts you’d like to express in Scala that are “too generic” for the compiler to understand""") {
+  koan(
+    """Scala has rank-1 polymorphism |
+      | Some type concepts you’d like to express in Scala that are “too generic” for the compiler to understand"""
+      .stripMargin) {
 
     def toList[A](a: A) = List(a)
 
@@ -30,19 +33,23 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
     /**
       * @doesnotcompile This does not compile, because all type variables have to be fixed at the invocation site
       * @see http://twitter.github.io/scala_school/type-basics.html
-      * <code>
+      *      <code>
           foo(toList, 10)
-      * </code>
+      *      </code>
       **/
 
-    foo[Int](toList, 10) should be(List(10)) /** @keypoint */
+    foo[Int](toList, 10) should be(List(10))
+
+    /** @keypoint*/
   }
 
 
   /**
     * @see https://twitter.github.io/scala_school/type-basics.html#inference
     */
-  koan("""In scala all type inference is local. Scala considers one expression at a time""") {
+  koan(
+    """In scala all type inference is local
+      | Scala considers one expression at a time""".stripMargin) {
 
     // @see http://stackoverflow.com/a/19388888/4032515
     import scala.reflect.ClassTag
@@ -60,5 +67,48 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
 
   }
 
+  /**
+    * @see http://twitter.github.io/scala_school/type-basics.html#variance
+    */
+  koan(
+    """Contravariance is used in defining functions
+      | Arguments are contravariant and return values are covariant""".stripMargin) {
 
+    class Animal {
+      val sound = "rustle"
+    }
+    class Bird extends Animal {
+      override val sound = "call"
+    }
+    class Chicken extends Bird {
+      override val sound = "cluck"
+    }
+    class Duck extends Bird {
+      override val sound = "quack"
+    }
+
+    /**
+      * Function parameters are contravariant.
+      * A function that takes a Bird can be assigned a function that takes an Animal
+      */
+    val getSoundOfAnimal: (Animal) => String = (a: Animal) => a.sound
+
+    val getTweetOfBird: (Bird => String) = getSoundOfAnimal
+
+    getTweetOfBird(new Bird) should be("call")
+
+    /**
+      * Function parameters are contravariant.
+      * A function that takes a Bird canNOT be assigned a function that takes a Duck:
+      */
+    val getSoundOfDuck: (Duck) => String = (a: Duck) => a.sound
+
+    /**
+      * @doesnotcompile
+      * <code>
+           val getTweetOfBird2: (Bird => String) = getSoundOfDuck
+            getTweetOfBird2(new Bird) should be("cluck")
+      * </code>
+      **/
+  }
 }
