@@ -3,6 +3,19 @@ package org.functionalkoans.forscala
 import org.functionalkoans.forscala.support.KoanSuite
 import org.scalatest.Matchers
 
+class Animal {
+  val sound = "rustle"
+}
+class Bird extends Animal {
+  override val sound = "call"
+}
+class Chicken extends Bird {
+  override val sound = "cluck"
+}
+class Duck extends Bird {
+  override val sound = "quack"
+}
+
 /**
   * @see http://twitter.github.io/scala_school/type-basics.html
   * @see http://docs.scala-lang.org/overviews/reflection/typetags-manifests.html
@@ -65,19 +78,6 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
 
   }
 
-  class Animal {
-    val sound = "rustle"
-  }
-  class Bird extends Animal {
-    override val sound = "call"
-  }
-  class Chicken extends Bird {
-    override val sound = "cluck"
-  }
-  class Duck extends Bird {
-    override val sound = "quack"
-  }
-
   /**
     * @see http://twitter.github.io/scala_school/type-basics.html#variance
     */
@@ -110,7 +110,7 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
       */
 
     /**
-      * Function parameters are contravariant.
+      * Function return type is covariant.
       * A function that returns a Bird can be assigned a function that takes a Duck
       */
     val hatch: () => Bird = () => new Duck
@@ -136,6 +136,9 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
     biophony(Seq(new Chicken, new Bird)) should be(Seq("cluck", "call"))
   }
 
+  import scala.reflect.runtime.universe._
+  def typeName[A : TypeTag](a: A) = typeTag[A].tpe.toString
+
   /**
     * @see http://twitter.github.io/scala_school/type-basics.html#bounds
     */
@@ -143,13 +146,34 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
     """Bounds can restrict polymorphic variables
       | The List type uses contravariance and clever covariance.""".stripMargin) {
 
-    import scala.reflect.runtime.universe._
-    def typeName[A : TypeTag](a: A) = typeTag[A].tpe.toString
-
     val flock = List(new Bird, new Bird)
 
-    typeName(new Chicken :: flock) should be("scala.List[Bird]]")
+    typeName(new Chicken :: flock) should be("List[Bird]]")
 
-    typeName(new Animal :: flock) should be("scala.List[Animal]]") /** @keypoint */
+    typeName(new Animal :: flock) should be("List[Animal]]") /** @keypoint */
   }
+
+  /**
+    * @see http://twitter.github.io/scala_school/type-basics.html#quantification
+    */
+  koan(
+    """Bounds can apply to wildcard type variables
+      | ....""".stripMargin) {
+
+    def countA[A](l: List[A]) = l.size
+
+    def countWild(l: List[_]) = l.size
+    typeName(countWild _) should be("scala.List[_] => Int")
+
+    // feature should be explicitly enabled
+    //def countHeavySyntax(l: List[T forSome { type T }]) = l.size
+
+    def dropWild(l: List[_]) = l.tail
+    typeName(dropWild _) should be("scala.List[_] => List[Any]")
+
+    def hashcodes(l: Seq[_ <: AnyRef]) = l map (_.hashCode)
+    typeName(hashcodes _) should be("scala.Seq[_ <: scala.AnyRef] => Seq[Int]")
+  }
+
+
 }
