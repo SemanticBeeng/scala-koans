@@ -3,8 +3,6 @@ package org.functionalkoans.forscala
 import org.functionalkoans.forscala.support.KoanSuite
 import org.scalatest.Matchers
 
-import scala.reflect
-
 /**
   * @see http://twitter.github.io/scala_school/type-basics.html
   * @see http://docs.scala-lang.org/overviews/reflection/typetags-manifests.html
@@ -40,7 +38,7 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
 
     foo[Int](toList, 10) should be(List(10))
 
-    /** @keypoint*/
+    /** @keypoint */
   }
 
 
@@ -67,6 +65,19 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
 
   }
 
+  class Animal {
+    val sound = "rustle"
+  }
+  class Bird extends Animal {
+    override val sound = "call"
+  }
+  class Chicken extends Bird {
+    override val sound = "cluck"
+  }
+  class Duck extends Bird {
+    override val sound = "quack"
+  }
+
   /**
     * @see http://twitter.github.io/scala_school/type-basics.html#variance
     */
@@ -74,24 +85,11 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
     """Contravariance is used in defining functions
       | Arguments are contravariant and return values are covariant""".stripMargin) {
 
-    class Animal {
-      val sound = "rustle"
-    }
-    class Bird extends Animal {
-      override val sound = "call"
-    }
-    class Chicken extends Bird {
-      override val sound = "cluck"
-    }
-    class Duck extends Bird {
-      override val sound = "quack"
-    }
-
     /**
       * Function parameters are contravariant.
       * A function that takes a Bird can be assigned a function that takes an Animal
       */
-    def getSoundOfAnimal(a : Animal) : String = a.sound
+    def getSoundOfAnimal(a: Animal): String = a.sound
 
     var getTweetOfBird: (Bird => String) = getSoundOfAnimal
 
@@ -115,8 +113,43 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
       * Function parameters are contravariant.
       * A function that returns a Bird can be assigned a function that takes a Duck
       */
-    val hatch : () => Bird = () => new Duck
+    val hatch: () => Bird = () => new Duck
 
     getTweetOfBird(hatch()) should be("quack")
+  }
+
+  /**
+    * @see http://twitter.github.io/scala_school/type-basics.html#bounds
+    */
+  koan(
+    """Bounds can restrict polymorphic variables
+      | These bounds express subtype relationships.""".stripMargin) {
+
+    /**
+      * @doesnotcompile
+      * <code>
+           def cacophony[T](things: Seq[T]) = things map (_.sound)
+      * </code>
+      **/
+    def biophony[T <: Animal](things: Seq[T]) = things map (_.sound)
+
+    biophony(Seq(new Chicken, new Bird)) should be(Seq("cluck", "call"))
+  }
+
+  /**
+    * @see http://twitter.github.io/scala_school/type-basics.html#bounds
+    */
+  koan(
+    """Bounds can restrict polymorphic variables
+      | The List type uses contravariance and clever covariance.""".stripMargin) {
+
+    import scala.reflect.runtime.universe._
+    def typeName[A : TypeTag](a: A) = typeTag[A].tpe.toString
+
+    val flock = List(new Bird, new Bird)
+
+    typeName(new Chicken :: flock) should be("scala.List[Bird]]")
+
+    typeName(new Animal :: flock) should be("scala.List[Animal]]") /** @keypoint */
   }
 }
