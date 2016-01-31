@@ -106,9 +106,17 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
     /**
       * @doesnotcompile
       * <code>
-          getTweetOfBird = getSoundOfDuck  
+          getTweetOfBird = getSoundOfDuck
           getTweetOfBird(new Bird) should be("cluck")
       * </code>
-      **/
+      */
+
+    /**
+      * Function parameters are contravariant.
+      * A function that returns a Bird can be assigned a function that takes a Duck
+      */
+    val hatch : () => Bird = () => new Duck
+
+    getTweetOfBird(hatch()) should be("quack")
   }
 }
