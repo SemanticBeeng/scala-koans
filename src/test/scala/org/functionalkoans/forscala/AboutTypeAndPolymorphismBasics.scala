@@ -107,7 +107,7 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
       * @doesnotcompile
       * <code>
            val getTweetOfBird2: (Bird => String) = getSoundOfDuck
-            getTweetOfBird2(new Bird) should be("cluck")
+           getTweetOfBird2(new Bird) should be("cluck")
       * </code>
       **/
   }
