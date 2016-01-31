@@ -56,8 +56,8 @@
       <file leaf-file-name="AboutTypeTags.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTypeTags.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1975477">
-              <caret line="101" column="7" selection-start-line="101" selection-start-column="7" selection-end-line="101" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.89158344">
+              <caret line="135" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
               <folding>
                 <element signature="e#38#91#0" expanded="true" />
               </folding>
@@ -1519,7 +1519,7 @@
       <option name="number" value="Default" />
       <updated>1454153935003</updated>
       <workItem from="1454154019981" duration="14680000" />
-      <workItem from="1454220608329" duration="405000" />
+      <workItem from="1454220608329" duration="493000" />
     </task>
     <servers />
   </component>
@@ -1556,7 +1556,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15085000" />
+    <option name="totallyTimeSpent" value="15173000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1707,8 +1707,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTypeTags.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1975477">
-          <caret line="101" column="7" selection-start-line="101" selection-start-column="7" selection-end-line="101" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.89158344">
+          <caret line="135" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
           <folding>
             <element signature="e#38#91#0" expanded="true" />
           </folding>
