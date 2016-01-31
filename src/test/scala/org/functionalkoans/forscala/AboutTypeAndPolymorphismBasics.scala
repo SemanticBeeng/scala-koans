@@ -2,19 +2,8 @@ package org.functionalkoans.forscala
 
 import org.functionalkoans.forscala.support.KoanSuite
 import org.scalatest.Matchers
-
-class Animal {
-  val sound = "rustle"
-}
-class Bird extends Animal {
-  override val sound = "call"
-}
-class Chicken extends Bird {
-  override val sound = "cluck"
-}
-class Duck extends Bird {
-  override val sound = "quack"
-}
+import scala.reflect.runtime.universe._
+import scala.reflect._
 
 /**
   * @see http://twitter.github.io/scala_school/type-basics.html
@@ -85,6 +74,19 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
     """Contravariance is used in defining functions
       | Arguments are contravariant and return values are covariant""".stripMargin) {
 
+    class Animal {
+      val sound = "rustle"
+    }
+    class Bird extends Animal {
+      override val sound = "call"
+    }
+    class Chicken extends Bird {
+      override val sound = "cluck"
+    }
+    class Duck extends Bird {
+      override val sound = "quack"
+    }
+
     /**
       * Function parameters are contravariant.
       * A function that takes a Bird can be assigned a function that takes an Animal
@@ -125,6 +127,19 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
     """Bounds can restrict polymorphic variables
       | These bounds express subtype relationships.""".stripMargin) {
 
+    class Animal {
+      val sound = "rustle"
+    }
+    class Bird extends Animal {
+      override val sound = "call"
+    }
+    class Chicken extends Bird {
+      override val sound = "cluck"
+    }
+    class Duck extends Bird {
+      override val sound = "quack"
+    }
+
     /**
       * @doesnotcompile
       * <code>
@@ -136,9 +151,6 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
     biophony(Seq(new Chicken, new Bird)) should be(Seq("cluck", "call"))
   }
 
-  import scala.reflect.runtime.universe._
-  def typeName[A : TypeTag](a: A) = typeTag[A].tpe.toString
-
   /**
     * @see http://twitter.github.io/scala_school/type-basics.html#bounds
     */
@@ -146,9 +158,25 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
     """Bounds can restrict polymorphic variables
       | The List type uses contravariance and clever covariance.""".stripMargin) {
 
+    class Animal {
+      val sound = "rustle"
+    }
+    class Bird extends Animal {
+      override val sound = "call"
+    }
+    class Chicken extends Bird {
+      override val sound = "cluck"
+    }
+    class Duck extends Bird {
+      override val sound = "quack"
+    }
+
     val flock = List(new Bird, new Bird)
 
-    typeName(new Chicken :: flock) should be("List[Bird]]")
+    def typeName[A : TypeTag](a: A) = typeTag[A].tpe.toString
+
+    val a1: List[Bird] = new Chicken :: flock
+    typeName(a1) should be("List[Bird]]")
 
     typeName(new Animal :: flock) should be("List[Animal]]") /** @keypoint */
   }
@@ -159,6 +187,8 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
   koan(
     """Bounds can apply to wildcard type variables
       | ....""".stripMargin) {
+
+    def typeName[A : TypeTag](a: A) = typeTag[A].tpe.toString
 
     def countA[A](l: List[A]) = l.size
 
