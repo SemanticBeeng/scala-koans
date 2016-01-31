@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="410430c3-3107-40a7-bd21-bd83e7442899" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTypeAndPolymorphismBasics.scala" afterPath="$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTypeAndPolymorphismBasics.scala" />
     </list>
     <ignored path="Scala Koans.iws" />
@@ -48,8 +47,8 @@
       <file leaf-file-name="AboutTypeAndPolymorphismBasics.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTypeAndPolymorphismBasics.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.526971">
-              <caret line="103" column="20" selection-start-line="103" selection-start-column="20" selection-end-line="103" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.6846473">
+              <caret line="108" column="42" selection-start-line="108" selection-start-column="42" selection-end-line="108" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -862,7 +861,7 @@
       <updated>1454153935003</updated>
       <workItem from="1454154019981" duration="14680000" />
       <workItem from="1454220608329" duration="493000" />
-      <workItem from="1454222204817" duration="3037000" />
+      <workItem from="1454222204817" duration="3626000" />
     </task>
     <servers />
   </component>
@@ -899,7 +898,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18210000" />
+    <option name="totallyTimeSpent" value="18799000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1084,8 +1083,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/org/functionalkoans/forscala/AboutTypeAndPolymorphismBasics.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.526971">
-          <caret line="103" column="20" selection-start-line="103" selection-start-column="20" selection-end-line="103" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.6846473">
+          <caret line="108" column="42" selection-start-line="108" selection-start-column="42" selection-end-line="108" selection-end-column="42" />
           <folding />
         </state>
       </provider>

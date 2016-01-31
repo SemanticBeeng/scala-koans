@@ -91,9 +91,9 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
       * Function parameters are contravariant.
       * A function that takes a Bird can be assigned a function that takes an Animal
       */
-    val getSoundOfAnimal: (Animal) => String = (a: Animal) => a.sound
+    def getSoundOfAnimal(a : Animal) : String = a.sound
 
-    val getTweetOfBird: (Bird => String) = getSoundOfAnimal
+    var getTweetOfBird: (Bird => String) = getSoundOfAnimal
 
     getTweetOfBird(new Bird) should be("call")
 
@@ -106,8 +106,8 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
     /**
       * @doesnotcompile
       * <code>
-           val getTweetOfBird2: (Bird => String) = getSoundOfDuck
-           getTweetOfBird2(new Bird) should be("cluck")
+          getTweetOfBird = getSoundOfDuck  
+          getTweetOfBird(new Bird) should be("cluck")
       * </code>
       **/
   }
