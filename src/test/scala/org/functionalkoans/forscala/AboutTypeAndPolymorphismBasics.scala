@@ -166,6 +166,8 @@ class AboutTypeAndPolymorphismBasics extends KoanSuite with Matchers {
 
     def countWild(l: List[_]) = l.size
 
+    val t = typeOf[List[_] => Int]
+
     // @todo this fails because
     // List[_] => Int did not equal List[_] => Int  ???
     // tt(countWild _) should ===(typeOf[List[_] => Int])
