@@ -1,7 +1,6 @@
 package org.functionalkoans.forscala
 
 import org.functionalkoans.forscala.support.KoanSuite
-import scala.reflect.ClassTag
 import scala.reflect.runtime.universe._
 
 class Candy
