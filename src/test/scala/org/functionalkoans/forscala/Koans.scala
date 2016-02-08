@@ -46,6 +46,7 @@ class Koans extends Suite {
     new AboutExtractors,
     new AboutByNameParameter,
     new AboutRepeatedParameters,
+    new AboutTypeBounds,
     new AboutTypeSignatures,
     new AboutTypeVariance,
     new AboutEnumerations,
