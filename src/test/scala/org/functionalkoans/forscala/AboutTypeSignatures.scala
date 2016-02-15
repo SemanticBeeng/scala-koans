@@ -1,6 +1,6 @@
 package org.functionalkoans.forscala
 
-import support.KoanSuite
+import org.functionalkoans.forscala.support.KoanSuite
 
 class AboutTypeSignatures extends KoanSuite {
   koan("In Java you declare a generic type within a <>, in Scala it is []") {
