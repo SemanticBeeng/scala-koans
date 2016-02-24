@@ -51,6 +51,7 @@ class Koans extends Suite {
     new AboutTypeSignatures,
     new AboutTypeVariance,
     new AboutTypeTransform,
+    new AboutMonoid,
     new AboutEnumerations,
     new AboutAdvancedOptions,
     new AboutInteroperability,
