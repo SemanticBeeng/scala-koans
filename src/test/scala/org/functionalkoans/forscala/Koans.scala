@@ -58,6 +58,7 @@ class Koans extends Suite {
     new AboutLazySequences,
     new AboutPathDependentTypes,
     new AboutRecursion,
-    new AboutStructuralTypes
+    new AboutStructuralTypes,
+    new AboutYesNoType
   )
 }
