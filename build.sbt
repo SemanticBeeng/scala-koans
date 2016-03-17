@@ -28,7 +28,7 @@ libraryDependencies ++= Seq(
 
 
 //Scalaz
-val scalazVersion = "7.2.0"
+val scalazVersion = "7.2.1"
 
 libraryDependencies += "org.scalaz" %% "scalaz-core" % scalazVersion
 
