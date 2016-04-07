@@ -108,4 +108,38 @@ class AboutTypeBounds extends KoanSuite with Matchers {
 
 
 
+
+  /**
+    * @see https://github.com/deanwampler/prog-scala-2nd-ed-code-examples/tree/master/src/main/scala/progscala2/typesystem
+    */
+  koan("""View bounds A <% B are used for automated conversion from on type to other with LinkedLists""") {
+
+    //Import the hierarchy of nodes
+    import org.functionalkoans.forscala.bounds._
+
+    // converts type A to Node[A], by creating a “leaf” node using a bounds.:: node with a reference to NilNode as the
+    // “next” element in the list.
+    implicit def any2Node[A](x: A): Node[A] = org.functionalkoans.forscala.bounds.::[A](x, NilNode)
+
+    //Defines a view bound on A, starting from the head of the nodes chain
+    case class LinkedList[A <% Node[A]](val head: Node[A]) {
+
+      //The type parameter means ``B is lower bounded by (i.e., is a supertype of) A, and B also
+      //has a view bound of B <% Node[B]. The expression applies to B, as being the ID (according to the grammar for
+      // type parameters)
+      def ::[ B >: A <% Node[B] ](x: Node[B]) =
+        LinkedList(org.functionalkoans.forscala.bounds.::(x.payload, head))
+      override def toString = head.toString
+    }
+    //Automatic conversion of dealing with Int and Strings taken care of
+    val list1 = LinkedList(1)
+    val list2 = 2 :: list1
+    val list3 = 3 :: list2
+    val list4 = "FOUR!" :: list3
+    println(list1)
+    println(list2)
+    println(list3)
+    println(list4)
+  }
+
 }
