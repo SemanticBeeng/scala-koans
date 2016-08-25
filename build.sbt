@@ -4,7 +4,7 @@ name := "Scala Koans"
 
 version := "1.0"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.11.8"
 
 traceLevel := -1
 
@@ -28,7 +28,7 @@ libraryDependencies ++= Seq(
 
 
 //Scalaz
-val scalazVersion = "7.2.1"
+val scalazVersion = "7.2.5"
 
 libraryDependencies += "org.scalaz" %% "scalaz-core" % scalazVersion
 
