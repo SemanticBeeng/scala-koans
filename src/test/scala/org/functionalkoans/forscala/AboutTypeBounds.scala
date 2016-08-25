@@ -57,8 +57,10 @@ class AboutTypeBounds extends KoanSuite with Matchers {
     * @see http://twitter.github.io/scala_school/advanced-types.html#structural
     */
   koan("""Structural types are expressed through interface structure and not through concrete types""") {
-    def foo(x: { def get: Int }) = 123 + x.get
-    foo(new {def get = 10}) should be (133)
+    def foo(x: {def get: Int}) = 123 + x.get
+    foo(new {
+      def get = 10
+    }) should be(133)
   }
 
   /**
@@ -68,23 +70,33 @@ class AboutTypeBounds extends KoanSuite with Matchers {
     trait Foo {
       type A
       val x: A
+
       def getX: A = x
     }
-    (new Foo { type A = Int; val x = 123 }).getX should be (123)
+    (new Foo {
+      type A = Int;
+      val x = 123
+    }).getX should be(123)
 
-    (new Foo { type A = String; val x = "hey" }).getX should be ("hey")
+    (new Foo {
+      type A = String;
+      val x = "hey"
+    }).getX should be("hey")
   }
 
   /**
     * @see http://twitter.github.io/scala_school/advanced-types.html#abstractmem
     */
   koan("""Abstract types variables can be referred with hash operator #""") {
-    trait Foo[M[_]] { type t[A] = M[A] }
+    trait Foo[M[_]] {
+      type t[A] = M[A]
+    }
 
     val x: Foo[List]#t[Int] = List(1)
 
-    x should be (List(1))
+    x should be(List(1))
   }
+
   /**
     * @see http://twitter.github.io/scala_school/advanced-types.html#manifest
     */
@@ -93,20 +105,21 @@ class AboutTypeBounds extends KoanSuite with Matchers {
       def make: A = manifest.erasure.newInstance.asInstanceOf[A]
     }
 
-    new MakeFoo[String].make should be ("")
+    new MakeFoo[String].make should be("")
 
     //Without the manifest
-    class MakeNoFoo[A]{ def make: A = asInstanceOf[A] }
+    class MakeNoFoo[A] {
+      def make: A = asInstanceOf[A]
+    }
+
     /**
       * @doesnotcompile Class cast exception, can not cast MakeNoFoo to String
       *
-      *  <code>
-      *  (new MakeNoFoo[String]).make
-      * </code>
+      *                 <code>
+      *                 (new MakeNoFoo[String]).make
+      *                 </code>
       **/
   }
-
-
 
 
   /**
@@ -127,8 +140,9 @@ class AboutTypeBounds extends KoanSuite with Matchers {
       //The type parameter means ``B is lower bounded by (i.e., is a supertype of) A, and B also
       //has a view bound of B <% Node[B]. The expression applies to B, as being the ID (according to the grammar for
       // type parameters)
-      def ::[ B >: A <% Node[B] ](x: Node[B]) =
+      def ::[B >: A <% Node[B]](x: Node[B]) =
         LinkedList(org.functionalkoans.forscala.bounds.::(x.payload, head))
+
       override def toString = head.toString
     }
     //Automatic conversion of dealing with Int and Strings taken care of
@@ -140,6 +154,51 @@ class AboutTypeBounds extends KoanSuite with Matchers {
     println(list2)
     println(list3)
     println(list4)
+  }
+
+  koan("""Path dependent types in nested types""") {
+
+    trait Service {
+
+      trait Logger {
+        def log(message: String): Unit
+      }
+
+      val logger: Logger
+      def run = {
+        logger.log("Starting " + getClass.getSimpleName + ":")
+        doRun
+      }
+
+      protected def doRun: Boolean
+    }
+    object MyService1 extends Service {
+
+      class MyService1Logger extends Logger {
+        def log(message: String) = println("1: " + message)
+      }
+      override val logger = new MyService1Logger
+      def doRun = true // do some real work...
+    }
+
+    object MyService2 extends Service {
+
+
+      /**
+        * @doesnotcompile The nested Logger type in each MyServiceX object is unique for each of the service
+        * types. The actual logger type is path-dependent.
+        *
+        * <code>
+        * override val logger = MyService1.logger
+        * </code>
+        **/
+      class MyService2Logger extends Logger {
+        def log(message: String) = println("2: " + message)
+      }
+      override val logger = new MyService2Logger
+      def doRun = true // do some real work...
+    }
+
   }
 
 }
