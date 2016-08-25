@@ -3,5 +3,7 @@ ivyrepo/*
 sbtboot/*
 project/target/*
 project/.ivy/*
+project/.boot/*
+project/.sbtboot/*
 project/project/target/*
 
