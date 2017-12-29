@@ -128,7 +128,8 @@ class AboutTypeVariance extends KoanSuite with Matchers {
 
   /**
     * The problem with covariance is that you can't mutate, set, or change the object since
-    * it has to guarantee that what you put in has to be that type.  In other words the reference is a fruit basket,
+    * it has to guarantee that what you put in has to be that type.  In other words the reference
+    * is a fruit basket,
     * but we still have to make sure that no other fruit can be placed in our orange basket"""
     **/
   koan("mutating an object is not allowed with covariance") {
@@ -270,7 +271,9 @@ class AboutTypeVariance extends KoanSuite with Matchers {
   }
 
 
-  koan( """Declaring a type as invariant also means that you can both mutate and access elements from an object of generic type""") {
+  koan(
+       """Declaring a type as invariant also means that you can both mutate and access elements
+         |from an object of generic type""".stripMargin) {
 
     class MyContainer[A](a: A)(implicit manifest: scala.reflect.Manifest[A]) {
       private[this] var item = a
